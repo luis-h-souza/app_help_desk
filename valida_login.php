@@ -21,7 +21,9 @@ foreach ($usuario_app as $user) {
 }
   if($usuario_autenticado) {
     echo 'Usuário autenticado';
+    $_SESSION['autenticado'] = 'SIM';
   } else {
+    $_SESSION['autenticado'] = 'NÃO';
     header('Location: index.php?login=erro'); 
     // função nativa que funciona como desvio, espera receber uma string com o destino a ser redirecionado
   }
