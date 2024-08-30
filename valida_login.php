@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Variável que verifica se a autenticação foi realizada
 $usuario_autenticado = false;
 
@@ -14,7 +16,7 @@ $usuario_app = [
 // echo "</pre>";
 
 foreach ($usuario_app as $user) {
-
+  // faz autenticação
   if($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha']) {
     $usuario_autenticado = true;
   }  

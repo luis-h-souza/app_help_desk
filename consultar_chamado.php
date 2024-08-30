@@ -36,6 +36,7 @@
       </a>
     </nav>
   </header>
+  
   <main>
     <div class="container">
       <div class="row">
@@ -68,7 +69,7 @@
 
               <div class="row mt-5">
                 <div class="col-6">
-                  <button class="btn btn-md btn-warning btn-block px-5" type="submit">Voltar</button>
+                  <a href="./abrir_chamado.php" class="btn btn-md btn-warning btn-block px-5 w-100">Voltar</a>
                 </div>
               </div>
             </div>

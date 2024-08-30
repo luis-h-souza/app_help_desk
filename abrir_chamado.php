@@ -71,7 +71,7 @@
               <div class="d-flex justify-content-between">
                 
                 <div class="">
-                  <button class="btn btn-md btn-warning btn-block align-itens-center px-5" type="submit">Voltar</button>
+                  <a href="./home.php" class="w-100 btn btn-md btn-warning btn-block align-itens-center px-5" type="submit">Voltar</a>
                 </div>
 
                 <div class="">
