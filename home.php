@@ -44,11 +44,11 @@
     <!-- place navbar here -->
     <nav class="navbar navbar-dark bg-dark p-3">
       <a class="navbar-brand" href="#">
-        <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
+        <img src="img/logo.png" width="40" height="40" class="d-inline-block align-center" alt="logo">
         App Help Desk
       </a>
       <ul class="navbar-nav me-1">
-        <li class="vav-item">
+        <li class="nav-item">
           <a href="./logoff.php" class="nav-link">SAIR</a>
         </li>
       </ul>

@@ -1,0 +1,4 @@
+Novo usuário#Criação Usuário#Criar acesso ao novo funcionário Luis
+Impressora não funciona#Impressora#Impressora desconfigurada
+Impressora#Impressora#desconfigurada
+Sem energia#Outro#Sem anergia nas tomadas

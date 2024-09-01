@@ -1,5 +1,26 @@
 <? require_once "validador_acesso.php" ?>
 
+<?php
+
+  $chamados = [];
+  //abrir o banco,txt
+  $arquivo = fopen('banco.txt', 'r');
+
+  // enqunato houver regsitros (linhas) a serem percorridos
+  while(!feof($arquivo) ) { // testa pelo fim de um arquivo
+    
+    $registro = fgets($arquivo);
+    $chamados []= $registro;
+  }
+
+  // fecha o arquivo aberto
+  fclose($arquivo);
+
+  echo '<pre>';
+  print_r($chamados);
+  echo '</pre>';
+?>
+
 <!doctype html>
 <html lang="pt-br">
 
@@ -44,7 +65,7 @@
     <!-- place navbar here -->
     <nav class="navbar navbar-dark bg-dark p-3">
       <a class="navbar-brand" href="#">
-        <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" alt="logo">
+        <img src="img/logo.png" width="40" height="40" class="d-inline-block align-center" alt="logo">
         App Help Desk
       </a>
       <ul class="navbar-nav me-1">
@@ -67,27 +88,21 @@
 
             <div class="card-body">
 
-              <div class="card mb-3 bg-light">
-                <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
-
+              <? foreach($chamados as $chamado) { ?>
+                
+                
+                <div class="card mb-3 bg-light">
+                  <div class="card-body">
+                    <h5 class="card-title">Título do chamado...</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
+                    <p class="card-text">Descrição do chamado...</p>
+                  </div>
                 </div>
-              </div>
-
-              <div class="card mb-3 bg-light">
-                <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
-
-                </div>
-              </div>
+              <? } ?>
 
               <div class="row mt-5">
                 <div class="col-6">
-                  <a href="./home.php" class="btn btn-md btn-warning btn-block px-5 w-100"><b>Voltar</b></a>
+                  <a href="./home.php" class="btn btn-md btn-warning btn-block px-5 w-100">Voltar</a>
                 </div>
               </div>
             </div>

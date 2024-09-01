@@ -31,7 +31,7 @@
     .card-login {
       padding: 50px 0 0 0 !important;
       width: 450px;
-      margin: 80px auto;
+      margin: 50px auto;
     }
   </style>
 </head>
@@ -50,7 +50,7 @@
     <div class="container">
       <div class="row">
 
-        <div class="card-login pt-5 ">
+        <div class="card-login pt-5">
           <div class="card shadow">
             <div class="card-header">
               <h4 class="mt-2 text-center">Login</h4>

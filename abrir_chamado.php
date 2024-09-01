@@ -44,7 +44,7 @@
     <!-- place navbar here -->
     <nav class="navbar navbar-dark bg-dark p-3">
       <a class="navbar-brand" href="#">
-        <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
+        <img src="img/logo.png" width="40" height="40" class="d-inline-block align-center" alt="">
         App Help Desk
       </a>
       <ul class="navbar-nav me-1">
@@ -97,11 +97,11 @@
                   <div class="d-flex justify-content-between">
 
                     <div class="col-6">
-                      <a href='./home.php' class='w-100 btn btn-md btn-warning btn-block align-itens-center px-5 me-2' type='submit'><b>Voltar</b></a>
+                      <a href='./home.php' class='w-100 btn btn-md btn-warning btn-block align-itens-center px-5 me-2' type='submit'>Voltar</a>
                     </div>
 
                     <div class='col-6'>
-                      <button class='w-100 btn btn-md btn-primary btn-block px-5 ms-2' type='submit'><b>Abrir</b></button>
+                      <button class='w-100 btn btn-md btn-primary btn-block px-5 ms-2' type='submit'>Abrir</button>
                     </div>
 
                   </div>
