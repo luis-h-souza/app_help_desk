@@ -1,10 +1,4 @@
-<?php
-  session_start();
-
-  if(!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM') {
-    header('Location: index.php?login=erro2');
-  }
-?>
+<? require_once "validador_acesso.php" ?>
 
 <!doctype html>
 <html lang="pt-br">
@@ -23,7 +17,26 @@
     rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
     crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .card-login {
+      padding: 50px 0 0 0 !important;
+      width: 450px;
+      margin: 80px auto;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -34,57 +47,71 @@
         <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
+      <ul class="navbar-nav me-1">
+        <li class="vav-item">
+          <a href="./logoff.php" class="nav-link">SAIR</a>
+        </li>
+      </ul>
     </nav>
   </header>
   <main>
-
-    <div class="card-header p-5">
-      <h3 class="text-center">Abertura de chamado</h3>
-    </div>
-    <div class="card-body">
+    <div class="container">
       <div class="row">
-        <div class="col">
 
-          <form class="col-10 px-5 my-0 mx-auto">
-            <div class="form-group py-2">
-              <label>Título</label>
-              <input type="text" class="form-control" placeholder="Título">
+        <div class="card-abrir-chamado p-5">
+          <div class="card">
+            <div class="card-header p-2">
+              <h3 class="mt-2">Abertura de chamado</h3>
             </div>
 
-            <div class="form-group py-2">
-              <label>Categoria</label>
-              <select class="form-control">
-                <option>Criação Usuário</option>
-                <option>Impressora</option>
-                <option>Hardware</option>
-                <option>Software</option>
-                <option>Rede</option>
-              </select>
-            </div>
+            <div class="card-body">
 
-            <div class="form-group py-2">
-              <label>Descrição</label>
-              <textarea class="form-control" rows="3"></textarea>
-            </div>
-
-            <div class="row mt-5">
-              <div class="d-flex justify-content-between">
+              <form method="post" action="./registra_chamado.php">
                 
-                <div class="">
-                  <a href="./home.php" class="w-100 btn btn-md btn-warning btn-block align-itens-center px-5" type="submit">Voltar</a>
+                <div class="form-group py-2">
+                  
+                  <label>Categoria</label>
+                  <select name="categoria" class="form-control">
+                    <option hidden></option>
+                    <option>Criação Usuário</option>
+                    <option>Impressora</option>
+                    <option>Hardware</option>
+                    <option>Software</option>
+                    <option>Rede</option>
+                    <option>Outro</option>
+                  </select>
+
+                  <div class="form-group py-2">
+                    <label>Título</label>
+                    <input name="titulo" type="text" class="form-control" placeholder="Título">
+                  </div>
+
                 </div>
 
-                <div class="">
-                  <button class="btn btn-md btn-primary btn-block px-5" type="submit">Abrir</button>
+                <div class="form-group py-2">
+                  <label>Descrição</label>
+                  <textarea name="descricao" class="form-control" rows="3"></textarea>
                 </div>
 
-              </div>
+                <div class="row mt-4">
+                  <div class="d-flex justify-content-between">
+
+                    <div class="col-6">
+                      <a href='./home.php' class='w-100 btn btn-md btn-warning btn-block align-itens-center px-5 me-2' type='submit'><b>Voltar</b></a>
+                    </div>
+
+                    <div class='col-6'>
+                      <button class='w-100 btn btn-md btn-primary btn-block px-5 ms-2' type='submit'><b>Abrir</b></button>
+                    </div>
+
+                  </div>
+                </div>
+              </form>
+
             </div>
-          </form>
-
+          </div>
         </div>
       </div>
-    </div>
     </div>
     </div>
     </div>

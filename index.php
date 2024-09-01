@@ -15,7 +15,25 @@
     rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
     crossorigin="anonymous" />
-  <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .card-login {
+      padding: 50px 0 0 0 !important;
+      width: 450px;
+      margin: 80px auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,7 +41,7 @@
     <!-- place navbar here -->
     <nav class="navbar navbar-dark bg-dark p-3">
       <a class="navbar-brand" href="#">
-        <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
+        <img src="img/logo.png" width="40" height="40" class="d-inline-block align-center" alt="logo">
         App Help Desk
       </a>
     </nav>
@@ -32,10 +50,10 @@
     <div class="container">
       <div class="row">
 
-        <div class="card-login pt-5">
+        <div class="card-login pt-5 ">
           <div class="card shadow">
             <div class="card-header">
-              <h4>Login</h4>
+              <h4 class="mt-2 text-center">Login</h4>
             </div>
             <div class="card-body">
               <form action="valida_login.php" method="post">
@@ -45,8 +63,9 @@
                 <div class="form-group my-3">
                   <input name="senha" type="password" class="form-control" placeholder="Senha">
                 </div>
-                
-                <?php if (isset($_GET['login']) && $_GET['login'] == 'erro') { // função que retorna true se o índice está setado?> 
+
+                <?php if (isset($_GET['login']) && $_GET['login'] == 'erro') { // função que retorna true se o índice está setado
+                ?>
 
                   <div class="text-danger">
                     Usuário ou senha inválido(s)

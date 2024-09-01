@@ -1,10 +1,4 @@
-<?php
-  session_start();
-
-  if(!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM') {
-    header('Location: index.php?login=erro2');
-  }
-?>
+<? require_once "validador_acesso.php" ?>
 
 <!doctype html>
 <html lang="pt-br">
@@ -23,7 +17,26 @@
     rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
     crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .card-login {
+      padding: 50px 0 0 0 !important;
+      width: 450px;
+      margin: 80px auto;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -34,9 +47,14 @@
         <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" alt="logo">
         App Help Desk
       </a>
+      <ul class="navbar-nav me-1">
+        <li class="vav-item">
+          <a href="./logoff.php" class="nav-link">SAIR</a>
+        </li>
+      </ul>
     </nav>
   </header>
-  
+
   <main>
     <div class="container">
       <div class="row">
@@ -44,7 +62,7 @@
         <div class="card-consultar-chamado p-5">
           <div class="card">
             <div class="card-header p-2">
-              <h4>Consulta de chamados</h4>
+              <h4 class="mt-2">Consulta de chamados</h4>
             </div>
 
             <div class="card-body">
@@ -69,7 +87,7 @@
 
               <div class="row mt-5">
                 <div class="col-6">
-                  <a href="./abrir_chamado.php" class="btn btn-md btn-warning btn-block px-5 w-100">Voltar</a>
+                  <a href="./home.php" class="btn btn-md btn-warning btn-block px-5 w-100"><b>Voltar</b></a>
                 </div>
               </div>
             </div>
