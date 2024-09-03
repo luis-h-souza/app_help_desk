@@ -1,24 +1,18 @@
 <? require_once "validador_acesso.php" ?>
 
-<?php
+<?php $chamados = [];
+//abrir o banco,txt
+$arquivo = fopen('banco.txt', 'r');
 
-  $chamados = [];
-  //abrir o banco,txt
-  $arquivo = fopen('banco.txt', 'r');
+// enqunato houver regsitros (linhas) a serem percorridos
+while (!feof($arquivo)) { // testa pelo fim de um arquivo
 
-  // enqunato houver regsitros (linhas) a serem percorridos
-  while(!feof($arquivo) ) { // testa pelo fim de um arquivo
-    
-    $registro = fgets($arquivo);
-    $chamados []= $registro;
-  }
+  $registro = fgets($arquivo);
+  $chamados[] = $registro;
+}
 
-  // fecha o arquivo aberto
-  fclose($arquivo);
-
-  echo '<pre>';
-  print_r($chamados);
-  echo '</pre>';
+// fecha o arquivo aberto
+fclose($arquivo);
 ?>
 
 <!doctype html>
@@ -88,17 +82,22 @@
 
             <div class="card-body">
 
-              <? foreach($chamados as $chamado) { ?>
-                
-                
-                <div class="card mb-3 bg-light">
-                  <div class="card-body">
-                    <h5 class="card-title">Título do chamado...</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                    <p class="card-text">Descrição do chamado...</p>
-                  </div>
-                </div>
-              <? } ?>
+              <?php foreach ($chamados as $chamado) {
+
+                $banco_dados = explode('#', $chamado);
+
+                if(count($banco_dados) < 3) {
+                  continue;
+                }
+
+                echo "<div class='card mb-3 bg-light'>
+                        <div class='card-body'>
+                          <h5 class='card-title'>$banco_dados[0]</h5>
+                          <h6 class='card-subtitle mb-2 text-muted'><b>Categoria:</b> $banco_dados[1]</h6>
+                          <p class='card-text'><b>Descrição:</b> $banco_dados[2]</p>
+                        </div>
+                      </div>";
+              } ?>
 
               <div class="row mt-5">
                 <div class="col-6">

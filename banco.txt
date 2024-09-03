@@ -1,4 +1,5 @@
-Novo usuário#Criação Usuário#Criar acesso ao novo funcionário Luis
-Impressora não funciona#Impressora#Impressora desconfigurada
-Impressora#Impressora#desconfigurada
-Sem energia#Outro#Sem anergia nas tomadas
+Novo usuário#Criação Usuário#Criar novo usuário
+Impressora#Impressora#Não configurada
+Sem energia#Outro#Equipamento não liga
+Aplicativo travando#Software#Não consigo entrar no e-mail
+Computador não funciona#Hardware#Trocar placa mãe

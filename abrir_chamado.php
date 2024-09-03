@@ -70,6 +70,11 @@
                 
                 <div class="form-group py-2">
                   
+                  <div class="form-group py-2">
+                    <label>Título</label>
+                    <input name="titulo" type="text" class="form-control" placeholder="Título">
+                  </div>
+                  
                   <label>Categoria</label>
                   <select name="categoria" class="form-control">
                     <option hidden></option>
@@ -80,12 +85,7 @@
                     <option>Rede</option>
                     <option>Outro</option>
                   </select>
-
-                  <div class="form-group py-2">
-                    <label>Título</label>
-                    <input name="titulo" type="text" class="form-control" placeholder="Título">
-                  </div>
-
+                  
                 </div>
 
                 <div class="form-group py-2">
