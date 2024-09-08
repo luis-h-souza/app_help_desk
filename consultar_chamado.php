@@ -1,18 +1,20 @@
 <? require_once "validador_acesso.php" ?>
 
-<?php $chamados = [];
-//abrir o banco,txt
-$arquivo = fopen('banco.txt', 'r');
+<?php
 
-// enqunato houver regsitros (linhas) a serem percorridos
-while (!feof($arquivo)) { // testa pelo fim de um arquivo
+  $chamados = [];
+  //abrir o banco,txt
+  $arquivo = fopen('banco.txt', 'r');
 
-  $registro = fgets($arquivo);
-  $chamados[] = $registro;
-}
+  // enqunato houver regsitros (linhas) a serem percorridos
+  while (!feof($arquivo)) { // testa pelo fim de um arquivo
 
-// fecha o arquivo aberto
-fclose($arquivo);
+    $registro = fgets($arquivo);
+    $chamados[] = $registro;
+  }
+
+  // fecha o arquivo aberto
+  fclose($arquivo);
 ?>
 
 <!doctype html>
@@ -58,8 +60,8 @@ fclose($arquivo);
   <header>
     <!-- place navbar here -->
     <nav class="navbar navbar-dark bg-dark p-3">
-      <a class="navbar-brand" href="#">
-        <img src="img/logo.png" width="40" height="40" class="d-inline-block align-center" alt="logo">
+      <a class="navbar-brand" href="./home.php">
+          <img src="img/logo.png" width="40" height="40" class="d-inline-block align-center" alt="logo">
         App Help Desk
       </a>
       <ul class="navbar-nav me-1">
@@ -86,15 +88,21 @@ fclose($arquivo);
 
                 $banco_dados = explode('#', $chamado);
 
+                // só exibe o chamado se ele foi criado pelo usuário
+                // if ($_SESSION['perfil_id'] == 2) {
+                //   if ($_SESSION['indice'] != $banco_dados[0]) {
+                //     continue;
+                //   }
+                // }
+
                 if(count($banco_dados) < 3) {
                   continue;
                 }
-
                 echo "<div class='card mb-3 bg-light'>
                         <div class='card-body'>
-                          <h5 class='card-title'>$banco_dados[0]</h5>
-                          <h6 class='card-subtitle mb-2 text-muted'><b>Categoria:</b> $banco_dados[1]</h6>
-                          <p class='card-text'><b>Descrição:</b> $banco_dados[2]</p>
+                          <h5 class='card-title'>$banco_dados[1]</h5>
+                          <h6 class='card-subtitle mb-2 text-muted'><b>Categoria:</b> $banco_dados[2]</h6>
+                          <p class='card-text'><b>Descrição:</b> $banco_dados[3]</p>
                         </div>
                       </div>";
               } ?>

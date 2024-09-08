@@ -43,7 +43,7 @@
   <header>
     <!-- place navbar here -->
     <nav class="navbar navbar-dark bg-dark p-3">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="./home.php">
         <img src="img/logo.png" width="40" height="40" class="d-inline-block align-center" alt="">
         App Help Desk
       </a>

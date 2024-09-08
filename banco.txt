@@ -1,5 +1,6 @@
-Novo usuário#Criação Usuário#Criar novo usuário
-Impressora#Impressora#Não configurada
-Sem energia#Outro#Equipamento não liga
-Aplicativo travando#Software#Não consigo entrar no e-mail
-Computador não funciona#Hardware#Trocar placa mãe
+1#Aplicativo travando#Software#travado
+2#Criar novo usuário#Criação Usuário#novo usuário
+3#Sem aceso a internet#Rede#travado
+1#teste#Hardware#teste teste
+2#teste user#Criação Usuário#test teste
+3#teste manutenção#Rede#test teste

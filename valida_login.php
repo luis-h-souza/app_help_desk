@@ -1,51 +1,41 @@
 <?php
 
+require "cadastro.php";
+
 session_start();
 
 // Variável que verifica se a autenticação foi realizada
 $usuario_autenticado = false;
 
-// usuários do sistema
-$usuario_app = [
-  ['email' => 'adm@teste.com.br', 'senha' => '1234'],
-  ['email' => 'user@teste.com.br', 'senha' => '1234']
-];
-
-// echo "<pre>";
-// print_r($usuario_app);
-// echo "</pre>";
-
-foreach ($usuario_app as $user) {
+foreach ($usuario_app as $user ) {
   // faz autenticação
   if($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha']) {
     $usuario_autenticado = true;
-  }  
-}
+  }
+  
   if($usuario_autenticado) {
     $_SESSION['autenticado'] = 'SIM';
-    $_SESSION['x'] = 'um valor';
-    $_SESSION['y'] = 'outro valor';
     header('Location: home.php');
   } else {
     $_SESSION['autenticado'] = 'NÃO';
-    header('Location: index.php?login=erro'); 
     // função nativa que funciona como desvio, espera receber uma string com o destino a ser redirecionado
+    header('Location: index.php?login=erro');
   }
-
-/*
-print_r($_GET)
-
-echo '<br />'
-echo $_GET['email']
-echo '<br />'
-echo $_GET['senha']
-*/
-
-// print_r($_POST);
-
-// echo '<hr />';
-// echo $_POST['email'];
-// echo '<br />';
-// echo $_POST['senha'];
-
+}
+  foreach ($usuarios as $user) {
+    
+    if (isset($_POST['confirmar'])) {
+      if($_SESSION['email-cad'] == $_POST['email-cad'] && $_SESSION['senha-cad'] == $_POST['senha-cad']) {
+        $usuario_autenticado = true;
+        header('Location: index.php');
+      }
+      if($usuario_autenticado) {
+        $_SESSION['cadastrado'] = 'SIM';
+        header('Location: home.php');
+      } else {
+        $_SESSION['cadastrado'] = 'NÃO';
+        header('Location: primeiro_acesso.php?cadastro=erro');
+      }
+    }
+  }
 ?>

@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!doctype html>
 <html lang="pt-br">
 
@@ -11,7 +9,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <!-- Bootstrap CSS v5.2.1 -->
+  <!-- Bootstrap CSS v5.3.2 -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -36,7 +34,7 @@
       width: 450px;
       margin: 50px auto;
     }
-
+    
     input {
       padding-left: 40px;
     }
@@ -52,10 +50,10 @@
   <header>
     <!-- place navbar here -->
     <nav class="navbar navbar-dark bg-dark p-3">
-      <div class="navbar-brand">
+      <a class="navbar-brand" href="index.php">
         <img src="img/logo.png" width="40" height="40" class="d-inline-block align-center" alt="logo">
         App Help Desk
-      </div>
+      </a>
     </nav>
   </header>
   <main>
@@ -67,37 +65,29 @@
             <div class="card-header">
               <h4 class="mt-2 text-center">Login</h4>
             </div>
+
             <div class="card-body">
               <form action="valida_login.php" method="post">
                 
+              <div class="form-group my-3 d-flex align-items-center">
+                  <i class="bi bi-person"></i>
+                  <input name="nome-cad" type="text" class="form-control" placeholder="Nome">
+                </div>
+                
                 <div class="form-group my-3 d-flex align-items-center">
                   <i class="bi bi-envelope"></i>
-                  <input name="email" type="email" class="form-control" placeholder="E-mail">
+                  <input name="email-cad" type="email" class="form-control" placeholder="E-mail">
                 </div>
-
+                
                 <div class="form-group my-3 d-flex align-items-center">
                   <i class="bi bi-lock"></i>
-                  <input name="senha" type="password" class="form-control" placeholder="Senha">
+                  <input name="senha-cad" type="password" class="form-control" placeholder="Senha">
                 </div>
 
-                <?php if (isset($_GET['login']) && $_GET['login'] == 'erro') { // função que retorna true se o índice está setado
-                ?>
-                  <div class="text-danger">
-                    Usuário ou senha inválido(s)
-                  </div>
-                <?php } ?>
+                <button class="btn btn-md btn-primary btn-block my-3 w-100" type="submit" name="confirmar">
+                  Confirmar
+                </button>
 
-                <?php if (isset($_GET['login']) && $_GET['login'] == 'erro2') { ?>
-
-                  <div class="text-danger">
-                    Por favor, faça login antes de acessar as páginas protegidas
-                  </div>
-                <?php } ?>
-
-                <button class="btn btn-md btn-primary btn-block my-3 w-100" type="submit">Entrar</button>
-
-                <a href="./primeiro_acesso.php" class="text-decoration-none">Criar acesso</a>
-                
               </form>
             </div>
           </div>
