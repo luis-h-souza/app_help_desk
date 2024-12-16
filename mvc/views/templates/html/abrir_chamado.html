@@ -1,0 +1,60 @@
+[[header]]
+
+<div class="card-abrir-chamado p-5">
+  <div class="card">
+    <div class="card-header p-2">
+      <h3 class="mt-2">Abertura de chamado</h3>
+    </div>
+
+    <div class="card-body">
+
+      <form method="post" action="">
+
+        <div class="form-group py-2">
+
+          <div class="form-group py-2">
+            <label>Título</label>
+            <input name="titulo" type="text" class="form-control" placeholder="Título">
+          </div>
+
+          <label>Categoria</label>
+          <select name="categoria" class="form-control">
+            <option hidden></option>
+            <option>Criação Usuário</option>
+            <option>Impressora</option>
+            <option>Hardware</option>
+            <option>Software</option>
+            <option>Rede</option>
+            <option>Outro</option>
+          </select>
+
+        </div>
+
+        <div class="form-group py-2">
+          <label>Descrição</label>
+          <textarea name="descricao" class="form-control" rows="3"></textarea>
+        </div>
+
+        <div class="row mt-4">
+          <div class="d-flex justify-content-between">
+
+            <div class="col-6">
+              <a href='./home.php' class='w-100 btn btn-md btn-warning btn-block align-itens-center px-5 me-2'
+                type='submit'>Voltar</a>
+            </div>
+
+            <div class='col-6'>
+              <button class='w-100 btn btn-md btn-primary btn-block px-5 ms-2' type='submit'>Abrir</button>
+            </div>
+
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+[[footer]]
