@@ -6,8 +6,8 @@
         <!-- place navbar here -->
         <nav class="navbar navbar-dark bg-dark shadow">
             <div class="navbar-brand border-0 my-2">
-                <img src="assets/images/logo.png" width="50" height="auto"
-                    class="d-inline-block ms-4" alt="logo">&nbsp; App Help Desk
+                <img src="{{ asset('assets/images/logo.png') }}" width="50" height="auto"
+                    class="d-inline-block ms-4" alt="logo">&nbsp;&nbsp; App Help Desk
             </div>
         </nav>
     </header>
@@ -28,13 +28,21 @@
                                 @csrf
 
                                 <div class="input-group my-4">
-                                    <input type="email" class="form-control d-inline-flex focus-ring focus-ring-info py-2.5 px-2 rounded-2" placeholder="E-mail" aria-label="E-mail"
-                                        aria-describedby="basic-addon1" name="email">
+                                    <input type="email" class="form-control d-inline-flex focus-ring focus-ring-info py-2.5 px-2 rounded-2 w-100" placeholder="E-mail" aria-label="E-mail"
+                                        aria-describedby="basic-addon1" name="email" value="{{ old('email') }}">
+                                        {{-- mostra o erro --}}
+                                        @error('email')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
 
                                 <div class="input-group mb-4">
-                                    <input type="password" class="form-control d-inline-flex focus-ring focus-ring-info py-2.5 px-2 rounded-2" placeholder="Senha" aria-label="Senha"
-                                        aria-describedby="basic-addon1" name="senha">
+                                    <input type="password" class="form-control d-inline-flex focus-ring focus-ring-info py-2.5 px-2 rounded-2 w-100" placeholder="Senha" aria-label="Senha"
+                                        aria-describedby="basic-addon1" name="senha" value="{{ old('senha') }}">
+                                        {{-- mostra o erro --}}
+                                        @error('senha')
+                                        <div class="text-danger d-flex ">{{ $message }}</div>
+                                        @enderror
                                 </div>
 
                                 <div class="form-check">
@@ -56,7 +64,7 @@
         </div>
     </main>
 
-    <footer class="container-fluid bg-dark position-fixed bottom-0 w-100 py-4">
+    <footer class="container-fluid bg-dark position-fixed bottom-0 w-100 py-4 border-top border-white border-opacity-10">
         <!-- place footer here -->
 
         <small class="text-white fw-lighter">&copy; App Help Desk</small>

@@ -66,24 +66,18 @@
             </div>
             <div class="card-body">
               <div class="row">
-                <div class="col-4 d-flex justify-content-center p-3">
+                <div class="col-6 d-flex justify-content-center p-3">
                   <a class="text-center text-decoration-none" href="./abrir_chamado.php">
                     <img src="img/formulario_abrir_chamado.png" width="70" height="70">
                     <p class="m-1">Abrir Chamado</p>
                   </a>
                 </div>
-                <div class="col-4 d-flex justify-content-center p-3">
+                <div class="col-6 d-flex justify-content-center p-3">
                   <a class="text-center text-decoration-none" href="./consultar_chamado.php">
                     <img src="img/formulario_consultar_chamado.png" width="70" height="70">
                     <p class="m-1">Consultar Chamado</p>
                   </a>
                 </div>
-                <!-- <div class="col-4 d-flex justify-content-center p-3">
-                  <a class="text-center text-decoration-none" href="./tabela_cadastro.php">
-                    <img src="img/bd.png" width="70" height="70">
-                    <p class="m-1">Usuários Cadastros</p>
-                  </a>
-                </div> -->
               </div>
             </div>
           </div>

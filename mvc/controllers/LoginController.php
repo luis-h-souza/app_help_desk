@@ -23,8 +23,8 @@ class LoginController
   public function criar()
   {
     // $nome = 'administrador';
-    // $email = 'adm@adm.com';
-    // $senha = 'admin123';
+    // $email = 'adm@teste.com.br';
+    // $senha = 'admin';
     // $nivelAcesso = '1';
 
     $nome = '';
