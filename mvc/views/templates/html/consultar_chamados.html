@@ -1,0 +1,46 @@
+[[header]]
+
+<div class="card-consultar-chamado p-5">
+  <div class="card">
+    <div class="card-header p-2">
+      <h4 class="mt-2">Consulta de chamados</h4>
+    </div>
+
+    <div class="card-body">
+
+      <!-- <?php foreach ($chamados as $chamado) {
+
+        $banco_dados = explode('#', $chamado);
+
+        // só exibe o chamado se ele foi criado pelo usuário
+        // if ($_SESSION['perfil_id'] == 2) {
+        //   if ($_SESSION['indice'] != $banco_dados[0]) {
+        //     continue;
+        //   }
+        // }
+
+        if(count($banco_dados) < 3) {
+          continue;
+        }
+        echo "<div class='card mb-3 bg-light'>
+                <div class='card-body'>
+                  <h5 class='card-title'>$banco_dados[1]</h5>
+                  <h6 class='card-subtitle mb-2 text-muted'><b>Categoria:</b> $banco_dados[2]</h6>
+                  <p class='card-text'><b>Descrição:</b> $banco_dados[3]</p>
+                </div>
+              </div>";
+      } ?> -->
+
+      <div class="row mt-5">
+        <div class="col-6">
+          <a href="[[base-url]]/home" class="btn btn-md btn-warning btn-block px-5 w-100">Voltar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</main>
+
+[[footer]]

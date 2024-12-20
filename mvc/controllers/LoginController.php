@@ -1,16 +1,16 @@
 <?php
 
-require "models/LoginModel.php";
+require_once "models/LoginModel.php";
 
 class LoginController
 {
 
   public $baseUrl = "http://localhost/app_help_desk/mvc";
-  private $loginModel;
+  private $LoginModel;
 
   public function __construct()
   {
-    $this->loginModel = new Login();
+    $this->LoginModel = new Login();
   }
 
   public function index()
@@ -27,11 +27,11 @@ class LoginController
     // $senha = 'admin';
     // $nivelAcesso = '1';
 
-    $nome = '';
-    $email = '';
-    $senha = '';
-    $nivelAcesso = '';
-    $this->loginModel->inserir($nome, $email, $senha, $nivelAcesso);
+    $nome = 'Luis';
+    $email = 'luis@teste.com.br';
+    $senha = '123456';
+    $nivelAcesso = '2';
+    $this->LoginModel->inserir($nome, $email, $senha, $nivelAcesso);  // método está criando usuários no banco de dados
   }
 
   public function autenticar()
@@ -40,9 +40,24 @@ class LoginController
     $senha = $_POST['senha'];
     $manter_logado = isset($_POST['manter_logado']) ? true : false;
 
-    $autenticado = $this->loginModel->getByUsuarioESenha($email, $senha, $manter_logado);
+    $autenticado = $this->LoginModel->getByUsuarioESenha($email, $senha, $manter_logado);
 
-    var_dump($autenticado);
+    print_r($autenticado);
+
+    // if (isset($_SESSION["erro"])){
+
+    //   //remove a sessão, pois ela não será necessária
+    //   unset($_SESSION["erro"]);
+
+    //   $erro = "<div class='alert alert-danger'><small>Não foi possível efetuar o login. Tente novamente</small></div>";
+      
+    //   $baseUrl = $this -> baseUrl;
+    //   require "views/LoginForm.php";
+
+    // } else {
+    //   // echo "Usuário " . $_SESSION['nome_usuario'] . " logado com sucesso.";
+    //   header("location:" . $this->baseUrl . "/home");
+    // }
 
     if (!$autenticado) {
       $erro = "<div class='alert alert-danger'><small>Não foi possível efetuar o login. Tente novamente</small></div>";

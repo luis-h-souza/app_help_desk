@@ -64,7 +64,7 @@
 
                 <button class='btn btn-md btn-primary btn-block my-3 w-100' type='submit'>Entrar</button>
 
-                <a href='./primeiro_acesso.php' class='text-decoration-none'>Criar acesso</a>
+                <a href='#' class='text-decoration-none'>Solicitar acesso</a>
 
               </form>
             </div>
@@ -77,7 +77,7 @@
   <footer class="container-fluid bg-dark d-flex align-items-center">
     <!-- place footer here -->
 
-    <small class="text-white fw-lighter">App Help Desk</small>
+    <small class="text-white fw-lighter">&copy; App Help Desk</small>
   </footer>
 
   <!-- Bootstrap JavaScript Libraries -->

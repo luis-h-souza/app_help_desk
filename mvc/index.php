@@ -14,14 +14,37 @@ $identificador = isset($segmentos[2]) && $segmentos[2] != "" ? $segmentos[2] : n
 
 switch ($controlador) {
   case 'home':
-    validaSessao();
+    // validaSessao();
     require "controllers/HomeController.php";
     $controller = new HomeController();
+    break;
+
+  case 'abrir_chamado':
+    // validaSessao();
+    require "controllers/AbrirChamadoController.php";
+    $controller = new AbrirChamadoController();
+    break;
+
+  case 'consultar_chamados':
+    // validaSessao();
+    require "controllers/ConsultarChamadosController.php";
+    $controller = new ConsultarChamadosController();
+    break;
+
+  case 'cadastrados':
+    // validaSessao();
+    require "controllers/CadastradosController.php";
+    $controller = new CadastradosController();
     break;
 
   case 'login':
     require "controllers/LoginController.php";
     $controller = new LoginController();
+    break;
+
+  case 'solicitar_acesso':
+    require "controllers/SolicitarAcessoController.php";
+    // $controller =  new SolicitarAcessoController();
     break;
 
   case 'sair':

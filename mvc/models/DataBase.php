@@ -18,6 +18,10 @@ class DataBase
           $usuario,
           $senha
         );
+        self::$conexao -> setAttribute(
+          PDO::ATTR_ERRMODE,
+          PDO::ERRMODE_EXCEPTION
+        );
 
       } catch (PDOException $error) {
         echo "Erro de conexão: " . $error->getMessage();

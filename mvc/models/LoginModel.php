@@ -23,8 +23,6 @@ class Login
       if (password_verify ($senhaDoUsuario, $senhaDoBanco)) {
         $_SESSION['email'] = $resultado['email'];
 
-        var_dump($_SESSION['email']);
-
         $_SESSION['nivel_acesso'] = $_SESSION['nivelAcesso'];
         if ($manter_logado) {
           setcookie('usuario', $resultado['email'], time() + 86400, "/");
