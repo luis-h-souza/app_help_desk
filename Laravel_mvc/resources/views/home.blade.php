@@ -31,21 +31,21 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-4 d-flex justify-content-center p-3">
-                                        <a class="text-center text-decoration-none" href="#">
+                                        <a class="text-center text-decoration-none" href="{{ route('new') }}">
                                             <img src="{{ asset('assets/images/formulario_abrir_chamado.png') }}"
                                                 width="70" height="70">
                                             <p class="m-1">Abrir Chamado</p>
                                         </a>
                                     </div>
                                     <div class="col-4 d-flex justify-content-center p-3">
-                                        <a class="text-center text-decoration-none" href="./consultar_chamado.php">
+                                        <a class="text-center text-decoration-none" href="{{ route('consult') }}">
                                             <img src="{{ asset('assets/images/formulario_consultar_chamado.png') }}"
                                                 width="70" height="70">
                                             <p class="m-1">Consultar Chamado</p>
                                         </a>
                                     </div>
                                     <div class="col-4 d-flex justify-content-center p-3">
-                                        <a class="text-center text-decoration-none" href="./tabela_cadastro.php">
+                                        <a class="text-center text-decoration-none" href="{{ route('users') }}">
                                             <img src="{{ asset('assets/images/bd.png') }}" width="70" height="70">
                                             <p class="m-1">Usuários Cadastros</p>
                                         </a>

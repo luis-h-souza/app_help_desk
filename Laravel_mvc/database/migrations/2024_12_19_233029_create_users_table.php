@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('colled', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('titulo')->nullable();
-            $table->string('categoria')->nullable();
-            $table->string('descricao')->nullable();
-            $table->dateTime('data_criacao')->nullable();
+            $table->string('nome', 100)->nullable();
+            $table->string('email', 100)->nullable();
+            $table->string('senha', 100)->nullable();
+            $table->dateTime('last_login')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('colled');
+        Schema::dropIfExists('users');
     }
 };

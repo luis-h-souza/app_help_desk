@@ -10,4 +10,19 @@ class MainController extends Controller
     {
         return view('home');
     }
+
+    public function new()
+    {
+        return view('newCalled');
+    }
+
+    public function consult()
+    {
+        return view('consultCalled');
+    }
+
+    public function users()
+    {
+        return view('users');
+    }
 }

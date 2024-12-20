@@ -11,6 +11,7 @@
             </div>
         </nav>
     </header>
+
     <main>
         <div class='container'>
             <div class='row'>
@@ -45,18 +46,20 @@
                                         @enderror
                                 </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input d-inline-flex focus-ring focus-ring-info py-1 px-2 rounded-1" type="checkbox" value="1" id="manter_logado"
-                                        name="manter_logado">
-                                    <label class="form-check-label" for="manter_logado">Manter logado</label>
-                                </div>
-
-                                <button class='btn btn-md btn-primary btn-block my-3 w-100'
+                                <button class='btn btn-md btn-info btn-block my-3 w-100'
                                     type='submit'><strong>Entrar</strong></button>
 
                                 <a href='#' class='text-decoration-none'>Criar acesso</a>
 
                             </form>
+
+                            {{-- Login Inválido --}}
+                            @if (session('loginError'))
+                                <div class="alert alert-danger text-center" role="alert">
+                                    {{ session('loginError') }}
+                                </div>
+                            @endif
+
                         </div>
                     </div>
                 </div>

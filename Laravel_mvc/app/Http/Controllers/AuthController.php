@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB as FacadesDB;
 
@@ -35,11 +36,11 @@ class AuthController extends Controller
         $email = $request->input('email');
         $senha = $request->input('senha');
 
-        // checar se o usuário existe
-        $user = User::where('username', $email)->where('deleted_at', NULL)->first();
+        // checar se o usuário existe -> que não está deletado da DB -> primeiro resultado
+        $user = User::where('email', $email)->where('deleted_at', NULL)->first();
         // se usuário não existir
         if(!$user){
-            // redireciona-> pra trás-> guardando o input-> com um erro específico
+            // redireciona -> pra trás -> guardando o input -> com um erro específico
             return redirect()->back()->withInput()->with('loginError', 'E-mail ou senha incorretos.');
         }
 
