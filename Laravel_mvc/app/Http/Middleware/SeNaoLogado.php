@@ -17,7 +17,7 @@ class SeNaoLogado
     {
 
         // checar se usuário NÃO está logado
-        if(!session('user')) {
+        if (!session('user')) {
             return redirect()->to('/');
         }
 

@@ -16,8 +16,15 @@ Route::middleware([SeNaoLogado::class])->group(function(){
 Route::middleware([SeLogado::class])->group(function(){
     Route::get('/', [MainController::class, 'index'])->name('home');
     Route::get('newCalled', [MainController::class, 'new'])->name('new');
+    Route::post('newCalledSubmit', [MainController::class, 'newSubmit'])->name('newSubmit');
     Route::get('consultCalled', [MainController::class, 'consult'])->name('consult');
     Route::get('users', [MainController::class, 'users'])->name('users');
+
+    // rota para edição de chamados
+    Route::get('editCalled/{id}', [MainController::class, 'editCalled'])->name('edit');
+
+    // rota para deletar chamados
+    Route::get('deleteCalled/{id}', [MainController::class, 'deleteCalled'])->name('delete');
 
     // logout da aplicação
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

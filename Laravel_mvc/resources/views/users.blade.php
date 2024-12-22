@@ -3,31 +3,11 @@
     {{-- if(empty($usuario_cadastro)) {
     $tabela_vazia = "<p class='alert alert-info'>Nenhum usuário cadastrado</p>";
     } --}}
-
-    <body>
-        <header>
-            <!-- place navbar here -->
-            <nav class="navbar navbar-dark bg-dark">
-                <div class="navbar-brand border-0 my-2">
-                    <a href="{{ route('home') }}" class="text-decoration-none">
-                        <img src="{{ asset('assets/images/logo.png') }}" width="50" height="auto"
-                            class="d-inline-block ms-4" alt="logo">
-                        &nbsp; App Help Desk
-                    </a>
-                </div>
-                <ul class="navbar-nav me-4">
-                    <h5 class="nav-item fw-bold">
-                        <a href="{{ route('logout') }}" class="nav-link border-0 ">SAIR</a>
-                    </h5>
-                </ul>
-            </nav>
-        </header>
-
         <main>
             <div class="container">
                 <div class="row">
                     <div class="card-consultar-chamado p-5">
-                        <div class="card">
+                        <div class="card border border-dark shadow">
                             <div class="card-header p-2">
                                 <h4 class="mt-2 ps-2 text-info">Cadastro de Usuários</h4>
                             </div>
@@ -40,7 +20,7 @@
                                             <th class="text-info">Nome</th>
                                             <th class="text-info">E-mail</th>
                                             <th class="text-info">Senha</th>
-                                            <th class="text-info">Ações</th>
+                                            <th class="text-info text-end pe-5">Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -48,10 +28,10 @@
                                             <td>$nome</td>
                                             <td>$email</td>
                                             <td>$senha</td>
-                                            <td class='text-center'>
-                                                <a href="#" class="btn btn-outline-secondary btn-sm m-1"><i
+                                            <td class='text-end'>
+                                                <a href="#" class="btn btn-outline-secondary m-1 border border-dark shadow-sm"><i
                                                         class="fa-regular fa-pen-to-square "></i></a>
-                                                <a href="#" class="btn btn-outline-danger btn-sm m-1"><i
+                                                <a href="#" class="btn btn-outline-danger m-1 border border-1 border-dark shadow-sm"><i
                                                         class="fa-regular fa-trash-can"></i></a>
                                                 </form>
                                             </td>
@@ -73,10 +53,10 @@
         </main>
 
         <footer
-            class="container-fluid bg-dark position-fixed bottom-0 w-100 py-4 border-top border-white border-opacity-10">
+            class="container-fluid bg-dark position-fixed bottom-0 w-100 py-2 border-top border-white border-opacity-10">
             <!-- place footer here -->
 
-            <small class="text-white fw-lighter">&copy; App Help Desk</small>
+            <small class="text-white fw-lighter"><span class="text-info">&copy;</span> App Help Desk</small>
         </footer>
 
         <!-- Bootstrap JavaScript Libraries -->

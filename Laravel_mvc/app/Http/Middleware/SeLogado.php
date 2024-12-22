@@ -17,7 +17,7 @@ class SeLogado
     {
 
         // checar se usuário ESTÁ logado
-        if(!session('user')) {
+        if (!session('user')) {
             return redirect()->to('/login');
         }
 

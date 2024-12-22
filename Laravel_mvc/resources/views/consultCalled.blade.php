@@ -1,32 +1,43 @@
 @extends('layouts.main_layout')
 @section('content')
 
-    <body>
-        <header>
-            <!-- place navbar here -->
-            <nav class="navbar navbar-dark bg-dark shadow">
-                <div class="navbar-brand border-0 my-2">
-                    <img src="{{ asset('assets/images/logo.png') }}" width="50" height="auto" class="d-inline-block ms-4"
-                        alt="logo">&nbsp;&nbsp; App Help Desk
-                </div>
-            </nav>
-        </header>
-
         <main>
             <div class="container">
                 <div class="row">
 
                     <div class="card-consultar-chamado p-5">
-                        <div class="card">
-                            <div class="card-header p-2">
-                                <h4 class="mt-2 text-info ps-2">Consulta de chamados</h4>
+                        <div class="card border border-dark shadow">
+                            <div class="card-header p-2 d-flex justify-content-between align-items-center">
+                                <h3 class="mt-2 text-info ps-2">Consulta de chamados</h3>
+                                <div class="d-flex justify-content-end my-4 pe-2">
+                                    <a href="{{ route('new') }}" class="btn btn-info px-3">
+                                        <i class="fa-regular fa-pen-to-square me-2"></i>Abrir chamado
+                                    </a>
+                                </div>
                             </div>
 
                             <div class="card-body">
 
-                                <div class="row mt-5">
-                                    <div class="col-6">
-                                        <a href="{{ route('home') }}" class="btn btn-md btn-warning btn-block px-5 w-100"><strong>Voltar</strong></a>
+                                <!-- Sem chamados disponíveis -->
+                                @if (count($called) == 0)
+                                    <div class="row mt-5">
+                                        <div class="col text-center">
+                                            <p class="display-6 mb-5 text-secondary opacity-50">Você não possui chamados.</p>
+
+                                        </div>
+                                    </div>
+                                @else
+
+                                    @foreach ($called as $call)
+                                        @include('called')
+                                    @endforeach
+
+                                @endif
+
+                                <div class="row mt-4">
+                                    <div class="col-6 my-2">
+                                        <a href="{{ route('home') }}"
+                                            class="btn btn-md btn-warning btn-block px-5 w-100"><strong>Voltar</strong></a>
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +52,7 @@
             class="container-fluid bg-dark position-fixed bottom-0 w-100 py-4 border-top border-white border-opacity-10">
             <!-- place footer here -->
 
-            <small class="text-white fw-lighter">&copy; App Help Desk</small>
+            <small class="text-white fw-lighter"><span class="text-info">&copy;</span> App Help Desk</small>
         </footer>
 
         <!-- Bootstrap JavaScript Libraries -->

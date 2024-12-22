@@ -1,13 +1,25 @@
-@extends('layouts.main_layout')
-@section('content')
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Help Desk</title>
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.min.css') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
 
 <body>
     <header>
         <!-- place navbar here -->
-        <nav class="navbar navbar-dark bg-dark shadow">
+        <nav class="navbar navbar-dark bg-dark border border-dark shadow">
             <div class="navbar-brand border-0 my-2">
-                <img src="{{ asset('assets/images/logo.png') }}" width="50" height="auto"
-                    class="d-inline-block ms-4" alt="logo">&nbsp;&nbsp; App Help Desk
+                <a href="{{ route('home') }}" class="text-decoration-none d-flex align-items-center">
+                    <img src="{{ asset('assets/images/logo.png') }}" width="50" height="auto" class="d-inline-block ms-4"
+                        alt="logo"><h2 class="ms-2">App Help Desk</h2>
+                </a>
             </div>
         </nav>
     </header>
@@ -67,10 +79,10 @@
         </div>
     </main>
 
-    <footer class="container-fluid bg-dark position-fixed bottom-0 w-100 py-4 border-top border-white border-opacity-10">
+    <footer class="container-fluid bg-dark position-fixed bottom-0 w-100 py-4 border-top border-white border-opacity-10 shadow">
         <!-- place footer here -->
 
-        <small class="text-white fw-lighter">&copy; App Help Desk</small>
+        <small class="text-white fw-lighter"><span class="text-info">&copy;</span> App Help Desk</small>
     </footer>
 
     <!-- Bootstrap JavaScript Libraries -->
@@ -81,5 +93,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
     </script>
-
-@endsection

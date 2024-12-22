@@ -1,30 +1,12 @@
 @extends('layouts.main_layout')
 @section('content')
 
-    <body>
-        <header>
-            <!-- place navbar here -->
-            <nav class="navbar navbar-dark bg-dark">
-                <div class="navbar-brand border-0 my-2">
-                    <a href="{{ route('home') }}" class="text-decoration-none">
-                        <img src="{{ asset('assets/images/logo.png') }}" width="50" height="auto" class="d-inline-block ms-4" alt="logo">
-                        &nbsp; App Help Desk
-                    </a>
-                </div>
-                <ul class="navbar-nav me-4">
-                    <h5 class="nav-item fw-bold">
-                        <a href="{{ route('logout') }}" class="nav-link border-0 ">SAIR</a>
-                    </h5>
-                </ul>
-            </nav>
-        </header>
-
         <main>
             <div class="container">
                 <div class="row">
 
                     <div class="card-home pt-5">
-                        <div class="card col-10 my-0 mx-auto">
+                        <div class="card col-10 my-0 mx-auto border border-dark shadow">
                             <div class="card-header">
                                 <h3 class="mt-2 text-info">Menu</h3>
                             </div>
@@ -59,7 +41,7 @@
 
         <footer
             class="container-fluid bg-dark position-fixed bottom-0 w-100 py-4 border-top border-white border-opacity-10">
-            <small class="text-white fw-lighter">&copy; App Help Desk</small>
+            <small class="text-white fw-lighter"><span class="text-info">&copy;</span> App Help Desk</small>
         </footer>
 
         <!-- Bootstrap JavaScript Libraries -->
