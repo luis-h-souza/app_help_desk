@@ -1,24 +1,23 @@
 <?php
 
-require_once "models/HomeModel.php";
+require_once "models/SolicitarAcessoModel.php";
 
-class HomeController
+class SolicitarAcessoController
 {
-  
+
   public $baseUrl = "http://localhost/app_help_desk/mvc";
-  private $HomeModel;
+  private $LoginModel;
 
   public function __construct()
   {
-    $this->HomeModel = new Home;
+    $this->LoginModel = new Acesso();
   }
 
   public function index()
   {
     $baseUrl = $this->baseUrl;
     $erro = "";
-    require "views/HomeView.php";
+    require "views/SolicitarAcessoView.php";
   }
-
 
 }

@@ -12,7 +12,7 @@
 
                         <div class="card-body">
 
-                            <form class="px-4 pb-2" method="post" action="{{ route('newSubmit') }}" novalidate>
+                            <form class="px-4 pb-2" method="post" action="{{ route('newSubmit') }}">
                                 @csrf
                                 <div class="form-group">
 

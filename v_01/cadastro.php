@@ -5,9 +5,8 @@ require_once "./class_cadastro.php";
 $cadastrados = new Cadastrados();
 
 $usuario_app = [
-  ['email' => 'adm@teste.com.br', 'senha' => '1234'],
-  ['email' => 'user@teste.com.br', 'senha' => '1234'],
-  ['email' => 'manutencao@teste.com.br', 'senha']
+  ['email' => 'adm@teste.com', 'senha' => '123456'],
+  ['email' => 'luis@teste.com', 'senha' => '123456']
 ];
 
 $usuarios = [];

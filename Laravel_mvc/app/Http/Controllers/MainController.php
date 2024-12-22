@@ -53,10 +53,14 @@ class MainController extends Controller
         // cria um chamado
         $called = new Called();
         $called->user_id = $id;
-        $called->titulo = $request->input('titulo');
+        echo $called->titulo = $request->input('titulo');
         $called->categoria = $request->input('categoria');
         $called->descricao = $request->input('descricao');
         $called->save();
+
+        if ($id === null) {
+            redirect()->route('home');
+        }
 
         // redireciona para home
         return redirect()->route('home');

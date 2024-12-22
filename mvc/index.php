@@ -14,25 +14,25 @@ $identificador = isset($segmentos[2]) && $segmentos[2] != "" ? $segmentos[2] : n
 
 switch ($controlador) {
   case 'home':
-    // validaSessao();
+    validaSessao();
     require "controllers/HomeController.php";
     $controller = new HomeController();
     break;
 
   case 'abrir_chamado':
-    // validaSessao();
+    validaSessao();
     require "controllers/AbrirChamadoController.php";
     $controller = new AbrirChamadoController();
     break;
 
   case 'consultar_chamados':
-    // validaSessao();
+    validaSessao();
     require "controllers/ConsultarChamadosController.php";
     $controller = new ConsultarChamadosController();
     break;
 
   case 'cadastrados':
-    // validaSessao();
+    validaSessao();
     require "controllers/CadastradosController.php";
     $controller = new CadastradosController();
     break;
@@ -44,7 +44,7 @@ switch ($controlador) {
 
   case 'solicitar_acesso':
     require "controllers/SolicitarAcessoController.php";
-    // $controller =  new SolicitarAcessoController();
+    $controller =  new SolicitarAcessoController();
     break;
 
   case 'sair':
@@ -54,7 +54,7 @@ switch ($controlador) {
 
   default:
     $baseUrl = "http://localhost/app_help_desk/mvc";
-    // header("Location: ") . $baseUrl . "404";
+    header("Location: ") . $baseUrl . "404";
     echo "página não encontrada";
     break;
 }

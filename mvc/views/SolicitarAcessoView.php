@@ -24,54 +24,51 @@
     <!-- place navbar here -->
     <nav class="navbar navbar-dark bg-dark">
       <div class="navbar-brand ">
+      <a class="navbar-brand" href="<?= $baseUrl ?>/login">
         <img src="<?= $baseUrl ?>/views/templates/assets/logo.png" width="40" height="40"
           class="d-inline-block ms-4" alt="logo">&nbsp; App Help Desk
+      </a>
       </div>
     </nav>
   </header>
-  <main>
-    <div class='container'>
-      <div class='row'>
-        <div class="col-4 m-auto pt-5">
 
-          <div class='card shadow'>
-            <div class='card-header'>
-              <h4 class='mt-2 text-center'>Login</h4>
+  <main>
+    <div class="container">
+      <div class="row">
+
+        <div class="card-login mt-5 col-4 m-auto">
+          <div class="card shadow">
+            <div class="card-header">
+              <h4 class="mt-2 text-center">Solicitar Acesso</h4>
             </div>
 
-            <div class='card-body'>
+            <div class="card-body">
+              <form action="valida_login.php" method="post">
 
-            <?= $erro ?>
-
-              <form id="form" name="form" method='post' action="<?= $baseUrl ?>/login/autenticar">
-
-                <div class="input-group my-4">
-                  <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope-at"></i></span>
-                  <input type="email" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1" name="email">
+                <div class="form-group my-3 d-flex align-items-center">
+                  <i class="bi bi-person"></i>
+                  <input name="nome-cad" type="text" class="form-control" placeholder="Nome">
                 </div>
 
-                <div class="input-group mb-4">
-                  <span class="input-group-text" id="basic-addon1"><i class='bi bi-lock'></i></span>
-                  <input type="password" class="form-control" placeholder="Senha" aria-label="Senha" aria-describedby="basic-addon1" name="senha">
+                <div class="form-group my-3 d-flex align-items-center">
+                  <i class="bi bi-envelope"></i>
+                  <input name="email-cad" type="email" class="form-control" placeholder="E-mail">
                 </div>
 
-                <div class="form-check ps-1">
-                  <input class="form-check-input-sm" type="checkbox" value="1" id="manter_logado" name="manter_logado">
-                  <label class="form-check-label" for="manter_logado">
-                  &nbsp;&nbsp;Manter logado
-                  </label>
+                <div class="form-group my-3 d-flex align-items-center">
+                  <i class="bi bi-lock"></i>
+                  <input name="senha-cad" type="password" class="form-control" placeholder="Senha">
                 </div>
 
-                <button class='btn btn-md btn-primary btn-block my-3 w-100' type='submit'>Entrar</button>
-
-                <a href='solicitar_acesso' class='text-decoration-none'>Solicitar acesso</a>
+                <button class="btn btn-md btn-primary btn-block my-3 w-100" type="submit" name="confirmar">
+                  Confirmar
+                </button>
 
               </form>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </main>
 
   <footer class="container-fluid bg-dark d-flex align-items-center">

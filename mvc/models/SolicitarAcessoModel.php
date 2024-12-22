@@ -2,7 +2,7 @@
 
 require_once "DataBase.php";
 
-class Login
+class Acesso
 {
   private $db;
 
